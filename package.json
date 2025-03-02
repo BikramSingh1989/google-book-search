@@ -3,16 +3,16 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "start": "concurrently \"npm run dev --prefix server\" \"npm start --prefix client\"",
+        "start":"npx concurrently \"npm run dev --prefix server\" \"npm start --prefix client\"",
         "server": "npm run dev --prefix server",
         "client": "npm start --prefix client"
-    },
-    "dependencies": {
-        "concurrently": "^8.2.2"
     },
     "description": "Google Books Search is a React-based application that allows users to search for books using the Google Books API. Users can **sign up, log in, search for books, and save their favorite books**. The app is integrated with a GraphQL backend using Apollo Client.",
     "main": "index.js",
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^9.1.2"
+    }
 }
