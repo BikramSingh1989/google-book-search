@@ -1,0 +1,25 @@
+.saved-books-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .saved-books-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .saved-book-card {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+  }
+  
+  .saved-book-card button {
+    margin-top: 10px;
+    background-color: red;
+  }
+  

@@ -1,0 +1,41 @@
+/* Search Page Layout */
+.search-container {
+    text-align: center;
+    padding-top: 120px; /* Prevents navbar overlap */
+  }
+  
+  /* "SEARCH FOR BOOKS!" Title */
+  .search-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  /* Search Bar */
+  .search-container input {
+    width: 500px; /* Same size as "SEARCH FOR BOOKS!" */
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  /* Submit Search Button */
+  .search-container button {
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .search-container button:hover {
+    background-color: darkgreen;
+  }
+  
