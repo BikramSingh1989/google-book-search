@@ -1,13 +1,18 @@
-import express, { Application } from "express";
+import express, { Express } from "express";
 import { ApolloServer } from "apollo-server-express";
 import { authMiddleware } from "./utils/auth";
 import { typeDefs, resolvers } from "./schemas";
 import db from "./config/connection";
+import cors from "cors";
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4000; 
 
 const startServer = async () => {
-  const app: Application = express(); // Ensuring compatibility
+  const app: Express = express(); 
+
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+  app.use(cors());
 
   const server = new ApolloServer({
     typeDefs,
@@ -17,16 +22,13 @@ const startServer = async () => {
 
   await server.start();
 
-  // Force Apollo to use the same Express as your project
-  (server as any).applyMiddleware({ app });
+   (server as any).applyMiddleware({ app });
 
   db.once("open", () => {
     app.listen(PORT, () => {
-      console.log(`🚀 Server running at http://localhost:3001${server.graphqlPath}`);
+      console.log(`🚀 Server running at http://localhost:${PORT}${server.graphqlPath}`); 
     });
   });
 };
 
 startServer();
-
-
